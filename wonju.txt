@@ -3,15 +3,50 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>smu uni. chungju</title>
+    <title>smu uni. wonju</title>
     <style>
-        p{text-align:center;}
+        p {
+            text-align: center;
+        }
     </style>
+    <style>
+        p {
+            text-align: center;
+        }
+
+        .bluetop {
+            border-collapse: collapse;
+            border-top: 3px solid #168;
+        }
+
+            .bluetop th {
+                color: #168;
+                background: #f0f6f9;
+            }
+
+            .bluetop th, .bluetop td {
+                padding: 10px;
+                border: 1px solid #ddd;
+            }
+
+                .bluetop th:first-child, .bluetop td:first-child {
+                    border-left: 0;
+                }
+
+                .bluetop th:last-child, .bluetop td:last-child {
+                    border-right: 0;
+                }
+    </style>
+    <script>
+        function showAlert() {
+                alert("통학증 신청 완료");
+            }
+    </script>
 </head>
 <body>
     <div>
         세명대학교 () 원주 통학신청서
-        <table border="1">
+        <table class="bluetop">
 
             <tr>
                 <th>등록번호</th>
@@ -119,7 +154,7 @@
     <div>
 
 
-        <table border="1">
+        <table class="bluetop">
 
             <tr>
                 <th colspan="7"> ■ 등교차량 </th>
@@ -162,7 +197,7 @@
 
         </table>
 
-        <table border="1">
+        <table class="bluetop">
             <tr>
                 <td colspan="2">개인정보 수집·이용 동의서</td>
                 <td colspan="2">개인정보 제3자 제공 동의서</td>
@@ -219,7 +254,7 @@
     </div>
     <br />
     ※ 월 등/하교 이용요금 [매월 통학증 등록 시 (소명함) 사진 1매 제출 바람. 이전 통학증에 부착된 사진 재사용 가능]
-    <table border="1">
+    <table class="bluetop">
         <tr>
             <td colspan="6">탑승지역</td>
             <td> 5일권</td>
@@ -238,7 +273,7 @@
     2. 주5일권은 1학년부터 4학년까지, 주 3일권은 4학년 학생에 한하여 이용 가능하며, 지정된 통학날짜에만 이용하여야 합니다.<br />
     3. 통학 중 불편 사항이 있을 시 TEL : (033) 735-8900 / 010-2598-6760 [서원관광] 으로 연락주시면 즉시 시정하겠습니다. <br />
     <p>세 명 대 학 교 학 생 처 장</p> <br />
-    <input type="submit" value="통학증 신청">
+                             <button onclick="showAlert()">통학증 신청</button>
 
 </body>
 </html>
