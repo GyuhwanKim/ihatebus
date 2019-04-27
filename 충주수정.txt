@@ -40,6 +40,27 @@
                 alert("통학증 신청 완료");
             }
     </script>
+<SCRIPT language=JavaScript>
+
+        var maxChecked = 3;
+        var totalChecked = 0;
+
+        function CountChecked(field) {
+            if (field.checked)
+                totalChecked += 1;
+            else
+                totalChecked -= 1;
+
+            if (totalChecked > maxChecked) {
+                alert("최대 3개 까지만 가능합니다.");
+                field.checked = false;
+                totalChecked -= 1;
+            }
+        }
+        function ResetCount() {
+            totalChecked = 0;
+        }
+    </SCRIPT>
 </head>
 <body>
     <div>
@@ -107,6 +128,11 @@
                 <td colspan="2"><input type="radio" name="dayticket" value="5days">5일권 </td>
                 <td colspan="3">
                     <input type="radio" name="dayticket" value="3days">3일권
+	        <INPUT name=Ants onclick=CountChecked(this) type=checkbox>월
+                    <INPUT name=Bald onclick=CountChecked(this) type=checkbox>화
+                    <INPUT name=Beards onclick=CountChecked(this) type=checkbox>수
+                    <INPUT name=Bed onclick=CountChecked(this) type=checkbox>목
+                    <INPUT name=Chins onclick=CountChecked(this) type=checkbox>금
                 </td>
             </tr>
             <tr>
