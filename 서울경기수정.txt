@@ -85,7 +85,40 @@
             <tr>
                 <td><input type="text" name="number"><br></td>
                 <td><input type="text" name="name"></td>
-                <td><input type="text" name="department"></td>
+                <td>
+                    <select name="major">
+                        <option value="major_1">간호학과</option>
+                        <option value="major_2">경찰행정학과</option>
+                        <option value="major_3">공연영상학과</option>
+                        <option value="major_4">광고홍보학과</option>
+                        <option value="major_5">국제언어문화학부</option>
+                        <option value="major_6">기업경영학과</option>
+                        <option value="major_7">디자인학부</option>
+                        <option value="major_8">디지털콘텐츠창작학과</option>
+                        <option value="major_9">미디어문화학부</option>
+                        <option value="major_10">바이오식품산업학부</option>
+                        <option value="major_11">바이오제약산업학부</option>
+                        <option value="major_12">바이오환경공학과</option>
+                        <option value="major_13">법학과</option>
+                        <option value="major_14">보건안전공학과</option>
+                        <option value="major_15">부동산학과</option>
+                        <option value="major_16">사회복지학과</option>
+                        <option value="major_17">생활체육학과</option>
+                        <option value="major_18">소방방재학과</option>
+                        <option value="major_19">임상병리학과</option>
+                        <option value="major_20">작업치료학과</option>
+                        <option value="major_21">전기공학과</option>
+                        <option value="major_22">전자상거래학과</option>
+                        <option value="major_23">정보통신학부</option>
+                        <option value="major_24">컴퓨터학부</option>
+                        <option value="major_25">토목공학과</option>
+                        <option value="major_26">한의예과</option>
+                        <option value="major_27">항공서비스학과</option>
+                        <option value="major_28">행정학과</option>
+                        <option value="major_29">호텔관광경영학과</option>
+                        <option value="major_30">화장품·뷰티생명공학부</option>
+                    </select>
+                </td>
                 <td><input type="text" name="class_of"></td>
                 <td>
                     <select name="grades">
@@ -241,7 +274,9 @@
     8. 통학버스 내에서 핸드폰 사용 시 조용한 목소리로 말하며, 타인에게 방해되는 일이 없도록 각별히 유념하시기 바랍니다.<br />
     <p>세 명 대 학 교 학 생 처 장</p> <br />
 
-    <button onclick="showAlert()">통학증 신청</button>
+    <center>
+        <button onclick="showAlert()">통학증 신청</button>
+    </center>
 
 
 </body>
