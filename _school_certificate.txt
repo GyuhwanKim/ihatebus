@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link type="text/css" rel="stylesheet" href="stylesheet1.css" />
+    <link type="text/css" rel="stylesheet" href="school_certificate.css" />
 </head>
 <body>
-    
+
     <div id="main">
         <div id="sub1">
             <p style="text-align:center">00월00일 통학증</p>
@@ -44,8 +44,8 @@
             상기 학생은 등 하교 등록금:_원을<br /> 납부하였으므로 정히 영수함
             <br />__년__월__일<br />세명대학교 학생처
         </div>
-            <img class="logo" src="smu_logo.jpg" width="200" height="50" />
-        
+        <img class="logo" src="smu_logo.jpg" width="200" height="50" />
+
 
     </div>
 </body>

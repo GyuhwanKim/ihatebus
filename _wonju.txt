@@ -8,10 +8,9 @@
         p {
             text-align: center;
         }
-    </style>
-    <style>
-        p {
-            text-align: center;
+
+        #title {
+            font: 30px solid;
         }
 
         .bluetop {
@@ -39,13 +38,37 @@
     </style>
     <script>
         function showAlert() {
-                alert("통학증 신청 완료");
-            }
+            alert("통학증 신청 완료");
+        }
     </script>
+    <SCRIPT language=JavaScript>
+
+        var maxChecked = 3;
+        var totalChecked = 0;
+
+        function CountChecked(field) {
+            if (field.checked)
+                totalChecked += 1;
+            else
+                totalChecked -= 1;
+
+            if (totalChecked > maxChecked) {
+                alert("최대 3개 까지만 가능합니다.");
+                field.checked = false;
+                totalChecked -= 1;
+            }
+        }
+        function ResetCount() {
+            totalChecked = 0;
+        }
+    </SCRIPT>
 </head>
 <body>
+
     <div>
-        세명대학교 () 원주 통학신청서
+        <font size="5">
+            <p id="title">세명대학교 () 원주 통학신청서</p>
+        </font>
         <table class="bluetop">
 
             <tr>
@@ -59,7 +82,40 @@
             <tr>
                 <td><input type="text" name="number"><br></td>
                 <td><input type="text" name="name"></td>
-                <td><input type="text" name="department"></td>
+                <td>
+                    <select name="major">
+                        <option value="major_1">간호학과</option>
+                        <option value="major_2">경찰행정학과</option>
+                        <option value="major_3">공연영상학과</option>
+                        <option value="major_4">광고홍보학과</option>
+                        <option value="major_5">국제언어문화학부</option>
+                        <option value="major_6">기업경영학과</option>
+                        <option value="major_7">디자인학부</option>
+                        <option value="major_8">디지털콘텐츠창작학과</option>
+                        <option value="major_9">미디어문화학부</option>
+                        <option value="major_10">바이오식품산업학부</option>
+                        <option value="major_11">바이오제약산업학부</option>
+                        <option value="major_12">바이오환경공학과</option>
+                        <option value="major_13">법학과</option>
+                        <option value="major_14">보건안전공학과</option>
+                        <option value="major_15">부동산학과</option>
+                        <option value="major_16">사회복지학과</option>
+                        <option value="major_17">생활체육학과</option>
+                        <option value="major_18">소방방재학과</option>
+                        <option value="major_19">임상병리학과</option>
+                        <option value="major_20">작업치료학과</option>
+                        <option value="major_21">전기공학과</option>
+                        <option value="major_22">전자상거래학과</option>
+                        <option value="major_23">정보통신학부</option>
+                        <option value="major_24">컴퓨터학부</option>
+                        <option value="major_25">토목공학과</option>
+                        <option value="major_26">한의예과</option>
+                        <option value="major_27">항공서비스학과</option>
+                        <option value="major_28">행정학과</option>
+                        <option value="major_29">호텔관광경영학과</option>
+                        <option value="major_30">화장품·뷰티생명공학부</option>
+                    </select>
+                </td>
                 <td><input type="text" name="class_of"></td>
                 <td>
                     <select name="grades">
@@ -73,32 +129,32 @@
             </tr>
             <tr>
                 <td>통학증유형</td>
-                <td><input type="radio" name="gender" value="male">5일권 </td>
-                <td>
-                    <input type="radio" name="gender" value="female">3일권
-                    <input type="checkbox" name="week" value="Mon">월
-                    <input type="checkbox" name="week" value="Thu">화
-                    <input type="checkbox" name="week" value="orange">수
-                    <input type="checkbox" name="week" value="orange">목
-                    <input type="checkbox" name="week" value="orange">금
+                <td colspan="2"><input type="radio" name="dayticket" value="5days">5일권 </td>
+                <td colspan="3">
+                    <input type="radio" name="dayticket" value="3days">3일권
+                    <INPUT name=Ants onclick=CountChecked(this) type=checkbox>월
+                    <INPUT name=Bald onclick=CountChecked(this) type=checkbox>화
+                    <INPUT name=Beards onclick=CountChecked(this) type=checkbox>수
+                    <INPUT name=Bed onclick=CountChecked(this) type=checkbox>목
+                    <INPUT name=Chins onclick=CountChecked(this) type=checkbox>금
                 </td>
             </tr>
             <tr>
                 <td>통학증 이용기간</td>
-                <td>2019년 04년 01일(월) ~ 2019년 04월 26일(금)</td>
+                <td colspan="5">2019년 04년 01일(월) ~ 2019년 04월 26일(금)</td>
             </tr>
-
         </table>
+
     </div>
     <br />
     ※ 등교 운행노선 확인 후 탑승 희망 구역에 체크하시기 바랍니다.<br />
     <div>
-        <table border="1">
+        <table class="bluetop">
             <tr>
                 <td>1호차</td>
                 <td>
                     <select name="busStop_1">
-                        <option value="busStop_1_1">태영주유소 위 민영의원 앞 버스정류장[07:50]</option>
+                        <option value="busStop_1_1">태장주유소 위 민영의원 앞 버스정류장[07:50]</option>
                         <option value="busStop_1_2">옛 시외터미널 버스정류장[07:54]</option>
                         <option value="busStop_1_3">우산철교 버스정류장[07:57]</option>
                         <option value="busStop_1_4">단계사거리 버스정류장[07:58]</option>
@@ -176,22 +232,51 @@
             </tr>
             <tr>
                 <td>1호차</td>
-                <td> 07:50 출발 (09:05 학교도착)</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td> 07:50 출발 <br>(09:05 학교도착)</td>
+                <td><input type="checkbox" name="week" value="Mon"></td>
+                <td><input type="checkbox" name="week" value="Tue"></td>
+                <td><input type="checkbox" name="week" value="Wed"></td>
+                <td><input type="checkbox" name="week" value="Thu"></td>
+                <td><input type="checkbox" name="week" value="Fri"></td>
                 <td>1호차</td>
-                <td> 07:50 출발 (09:05 학교도착)</td>
+                <td>월~목 16:30 <br> 금요일 14:30</td>
+                <td><input type="checkbox" name="week" value="Mon"></td>
+                <td><input type="checkbox" name="week" value="Tue"></td>
+                <td><input type="checkbox" name="week" value="Wed"></td>
+                <td><input type="checkbox" name="week" value="Thu"></td>
+                <td><input type="checkbox" name="week" value="Fri"></td>
             </tr>
             <tr>
                 <td>2호차</td>
-                <td> 08:15 출발</td>
+                <td> 08:15 출발 <br> (09:10 학교 도착)</td>
+                <td><input type="checkbox" name="week" value="Mon"></td>
+                <td><input type="checkbox" name="week" value="Tue"></td>
+                <td><input type="checkbox" name="week" value="Wed"></td>
+                <td><input type="checkbox" name="week" value="Thu"></td>
+                <td><input type="checkbox" name="week" value="Fri"></td>
+                <td>2호차</td>
+                <td>월~목 17:30<br> 금요일 16:30</td>
+                <td><input type="checkbox" name="week" value="Mon"></td>
+                <td><input type="checkbox" name="week" value="Tue"></td>
+                <td><input type="checkbox" name="week" value="Wed"></td>
+                <td><input type="checkbox" name="week" value="Thu"></td>
+                <td><input type="checkbox" name="week" value="Fri"></td>
             </tr>
             <tr>
                 <td>3호차</td>
-                <td> 10:00 출발</td>
+                <td> 10:00 출발 <br> (11:15 학교 도착)</td>
+                <td><input type="checkbox" name="week" value="Mon"></td>
+                <td><input type="checkbox" name="week" value="Tue"></td>
+                <td><input type="checkbox" name="week" value="Wed"></td>
+                <td><input type="checkbox" name="week" value="Thu"></td>
+                <td><input type="checkbox" name="week" value="Fri"></td>
+                <td>3호차</td>
+                <td>월~목 18:40 <br> 금요일 18:40</td>
+                <td><input type="checkbox" name="week" value="Mon"></td>
+                <td><input type="checkbox" name="week" value="Tue"></td>
+                <td><input type="checkbox" name="week" value="Wed"></td>
+                <td><input type="checkbox" name="week" value="Thu"></td>
+                <td><input type="checkbox" name="week" value="Fri"></td>
             </tr>
 
 
@@ -273,7 +358,9 @@
     2. 주5일권은 1학년부터 4학년까지, 주 3일권은 4학년 학생에 한하여 이용 가능하며, 지정된 통학날짜에만 이용하여야 합니다.<br />
     3. 통학 중 불편 사항이 있을 시 TEL : (033) 735-8900 / 010-2598-6760 [서원관광] 으로 연락주시면 즉시 시정하겠습니다. <br />
     <p>세 명 대 학 교 학 생 처 장</p> <br />
-                             <button onclick="showAlert()">통학증 신청</button>
+    <center>
+        <button onclick="showAlert()">통학증 신청</button>
+    </center>
 
 </body>
 </html>
