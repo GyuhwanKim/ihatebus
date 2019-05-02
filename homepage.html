@@ -1,80 +1,28 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>smu. homepage</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <title>homepage</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-
-        .header {
-            background-color: #f1f1f1;
-            padding: 30px;
-            text-align: center;
-            font-size: 35px;
-        }
-
-
-        .column {
-            float: left;
-            width: 33.33%;
-            padding: 10px;
-            height: 300px;
-        }
-
-
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-
-        .footer {
-            background-color: #f1f1f1;
-            padding: 10px;
-            text-align: center;
-        }
-
-
-        @media (max-width: 600px) {
-            .column {
-                width: 100%;
-            }
+        .main{
+            /*margin-left:30%;*/
+            width:800px;
+            height:800px;
+            /*margin:0 auto;
+            margin-bottom:50px;*/
+            position:relative;
+            top:150px;
+            left:600px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <column><ul><li>모바일 통학증</li></ul></column>
+    <div class="main">
+        <a href="shuttle_applicationForms.html"><img src="img/shuttle_applicationForm_2.png" width="300" height="300" /></a>
+        <a href="http://www.semyung.ac.kr/kor/sub05_04_01.do"><img src="img/shuttle_information_2.png" width="300" height="300" /></a>
+        <a href="http://www.semyung.ac.kr/prog/atdBusGuide/kor/sub01_06_03_02/list.do"><img src="img/shuttle_busStop_2.png" width="300" height="300" /></a>
+        <a href="shuttle_pass.html"><img src="img/shuttle_pass_2.png" width="300" height="300" /></a>
     </div>
-
-    <div class="row">
-        <div class="column" style="background-color:wheat;">
-        <column>
-            <ul>
-                <li>
-                    <a href="seoul.html" target="frame">서울·경기 통학버스 예약</a> <br />
-                    <a href="wonju.html" target="frame">원주 통학버스 예약</a> <br /> 
-                    <a href="chungju.html" target="frame">충주 통학버스 예약</a>
-                </li>
-            </ul>
-        </column>
-        </div>
-        <div class="column" style="background-color:lightgoldenrodyellow"><column><ul> <li><a href="http://www.semyung.ac.kr/kor/sub05_04_01.do">통학버스 운행안내 </a></li></ul></column></div>
-        <div class="column" style="background-color:navajowhite"><column><ul><li><a href="http://www.semyung.ac.kr/prog/atdBusGuide/kor/sub01_06_03_02/list.do">통학버스 출발장소</a></li></ul></column></div>
-    </div>
-
-    <div class="footer">
-        <p><img src="img/smu_logo.jpg" width="500" height="200" /></p>
-    </div>
-
 </body>
-</html>
+</html> 
