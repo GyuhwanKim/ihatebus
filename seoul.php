@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>smu uni. Seoul</title>
+
+    <link rel="stylesheet" href="css/appFormStyle.css">
+
+    <SCRIPT language=JavaScript>
+        var maxChecked = 3;
+        var totalChecked = 0;
+
+        function CountChecked(field) {
+            if (field.checked)
+                totalChecked += 1;
+            else
+                totalChecked -= 1;
+
+            if (totalChecked > maxChecked) {
+                alert("최대 3개 까지만 가능합니다.");
+                field.checked = false;
+                totalChecked -= 1;
+            }
+
+        }
+        function ResetCount() {
+            totalChecked = 0;
+        }
+    </SCRIPT>
+</head>
+
+<body>
+<form method="post" action="appSave_action.php">
+    <div>
+        <p id="title">세명대학교 () 서울·경기 통학신청서</p>
+        <table class="blueTop">
+            <tr>
+                <th>성 명</th>
+                <th>학부(과)</th>
+                <th>학 번</th>
+                <th>학 년</th>
+                <th>연락처</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="app_name"></td>
+                <td>
+                    <select name="app_major">
+                        <option value="major_0"></option>
+                        <option value="간호학과">간호학과</option>
+                        <option value="경찰행정학과">경찰행정학과</option>
+                        <option value="공연영상학과">공연영상학과</option>
+                        <option value="광고홍보학과">광고홍보학과</option>
+                        <option value="국제언어문화학부">국제언어문화학부</option>
+                        <option value="기업경영학과">기업경영학과</option>
+                        <option value="디자인학부">디자인학부</option>
+                        <option value="디지털콘텐츠창작학과">디지털콘텐츠창작학과</option>
+                        <option value="미디어문화학부">미디어문화학부</option>
+                        <option value="바이오식품산업학부">바이오식품산업학부</option>
+                        <option value="바이오제약산업학부">바이오제약산업학부</option>
+                        <option value="바이오환경공학과">바이오환경공학과</option>
+                        <option value="법학과">법학과</option>
+                        <option value="보건안전공학과">보건안전공학과</option>
+                        <option value="부동산학과">부동산학과</option>
+                        <option value="사회복지학과">사회복지학과</option>
+                        <option value="생활체육학과">생활체육학과</option>
+                        <option value="소방방재학과">소방방재학과</option>
+                        <option value="임상병리학과">임상병리학과</option>
+                        <option value="작업치료학과">작업치료학과</option>
+                        <option value="전기공학과">전기공학과</option>
+                        <option value="전자상거래학과">전자상거래학과</option>
+                        <option value="정보통신학부">정보통신학부</option>
+                        <option value="컴퓨터학부">컴퓨터학부</option>
+                        <option value="토목공학과">토목공학과</option>
+                        <option value="한의예과">한의예과</option>
+                        <option value="항공서비스학과">항공서비스학과</option>
+                        <option value="행정학과">행정학과</option>
+                        <option value="호텔관광경영학과">호텔관광경영학과</option>
+                        <option value="화장품·뷰티생명공학부">화장품·뷰티생명공학부</option>
+                    </select>
+                </td>
+                <td><input type="text" name="app_class_of"></td>
+                <td>
+                    <select name="app_grades">
+                        <option value="grade_0"></option>
+                        <option value="1학년">1학년</option>
+                        <option value="2학년">2학년</option>
+                        <option value="3학년">3학년</option>
+                        <option value="4학년">4학년</option>
+                    </select>
+                </td>
+                <td><input type="text" name="app_phoneNum"></td>
+            </tr>
+            <tr>
+                <td>통학증유형</td>
+                <td colspan="2"><input type="radio" name="app_ticket" value="5일권">5일권 </td>
+                <td colspan="3">
+                    <input type="radio" name="app_ticket" value="3일권">3일권
+                    <INPUT name=day value="월" onclick=CountChecked(this) type=checkbox>월
+                    <INPUT name=day value="화" onclick=CountChecked(this) type=checkbox>화
+                    <INPUT name=day value="수" onclick=CountChecked(this) type=checkbox>수
+                    <INPUT name=day value="목" onclick=CountChecked(this) type=checkbox>목
+                    <INPUT name=day value="금" onclick=CountChecked(this) type=checkbox>금
+
+
+                </td>
+            </tr>
+            <tr>
+                <td>통학증 이용기간</td>
+                <td colspan="5">2019년 04년 01일(월) ~ 2019년 04월 26일(금)</td>
+            </tr>
+
+        </table>
+        <br />
+        ※ 등교 운행노선 확인 후 탑승 희망 구역에 체크하시기 바랍니다.<br />
+        <table class="blueTop">
+            <tr>
+                <td colspan="2">종합운동장(잠실)<input type="radio" name="app_busStop" value="잠실"></td>
+            </tr>
+            <tr>
+                <td>시 청 [06:50] <input type="radio" name="app_busStop" value="시청"></td>
+                <td>상 봉 [07:00]<input type="radio" name="app_busStop" value="상봉"> / 구 리 [07:10]<input type="radio" name="app_busStop" value="구리"></td>
+            </tr>
+            <tr>
+                <td>길 동 [07:20] <input type="radio" name="app_busStop" value="길동"> / 상 일 동 [07:30]<input type="radio" name="app_busStop" value="상일동"></td>
+                <td>모 란 [07:30]<input type="radio" name="app_busStop" value="모란"> / 야 탑 [07:50]<input type="radio" name="app_busStop" value="야탑"></td>
+            </tr>
+            <tr>
+                <td>동 수 원 [07:00] <input type="radio" name="app_busStop" value="동수원"> / 북 수 원 [07:10]<input type="radio" name="app_busStop" value="북수원"></td>
+                <td>송 내 [06:40]<input type="radio" name="app_busStop" value="송내"> / 안 양 [07:20]<input type="radio" name="app_busStop" value="안양"></td>
+            </tr>
+            <tr>
+                <td>이 천 [07:40] <input type="radio" name="app_busStop" value="이천"> / 여 주 [08:10]<input type="radio" name="app_busStop" value="여주"></td>
+                <td>죽 전 [07:05] <input type="radio" name="app_busStop" value="죽전"> / 용 인 [07:45]<input type="radio" name="app_busStop" value="용인"></td>
+            </tr>
+        </table>
+        <br />
+        ※ 지역 및 출발시간 확인 후 탑승 희망 차량에 체크하시기 바랍니다.<br />
+        <table class="blueTop">
+            <tr>
+                <td colspan="2">개인정보 수집·이용 동의서</td>
+                <td colspan="2">개인정보 제3자 제공 동의서</td>
+            </tr>
+            <tr>
+                <td>수집·이용 목적</td>
+                <td> ■ 통학생 관리 및 통학버스 운영을 위한 목적</td>
+                <td>수집·이용 목적</td>
+                <td> ■ 통학생 관리 및 통학버스 운영을 위한 목적</td>
+            </tr>
+            <tr>
+                <td>제공받는 자</td>
+                <td> ■ 세명대학교</td>
+                <td>제공받는 자</td>
+                <td> ■ 지역별 통학버스 운행업체</td>
+            </tr>
+            <tr>
+                <td>수집항목</td>
+                <td> ■ 성명, 학부(과), 학번, 학년, 연락처, 통학지역</td>
+                <td>수집항목</td>
+                <td> ■ 성명, 학부(과), 학번, 학년, 연락처, 통학지역</td>
+            </tr>
+            <tr>
+                <td>보유·이용 기간</td>
+                <td> 1년간</td>
+                <td>보유·이용 기간</td>
+                <td> 1년간</td>
+            </tr>
+            <tr>
+                <td>
+                    동의를 거부할 권리 및<br />
+                    동의를 거부할 경우의 불이익
+                </td>
+                <td>
+                    개인정보의 수집·이용에 관한 동의를 거부할 수 있으며<br />
+                    거부 시 통학버스 이용 신청을 하실 수 없습니다.
+                </td>
+                <td>
+                    동의를 거부할 권리 및<br />
+                    동의를 거부할 경우의 불이익
+                </td>
+                <td>
+                    개인정보의 수집·이용에 관한 동의를 거부할 수 있으며<br />
+                    거부 시 통학버스 이용 신청을 하실 수 없습니다.
+                </td>
+            </tr>
+            <tr>
+                <td>수집·이용·제공 동의 여부</td>
+                <td>위와 같이 본인의 개인정보를 수집·이용·제공 하는 것에 동의합니다.</td>
+                <td>수집·이용·제공 동의 여부</td>
+                <td>위와 같이 본인의 개인정보를 수집·이용·제공 하는 것에 동의합니다.</td>
+            </tr>
+        </table>
+    </div>
+    <br />
+
+    세명대학교 총장 귀증<br />
+    ※ 월 등/하교 이용요금 [매월 통학증 등록 시 (소명함) 사진 1매 제출 바람. 이전 통학증에 부착된 사진 재사용 가능]
+    <table class="blueTop">
+        <tr>
+            <td colspan="11">탑승지역</td>
+            <td> 5일권(총 20일 기준)</td>
+            <td>3일권(총 12일 기준)</td>
+        </tr>
+        <tr>
+            <td colspan="11">종합운동장(잠실), 시청, 상봉, 구리, 강동, 모란, 야탑, 용인, 죽전, 수원, 안양</td>
+            <td>118,000</td>
+            <td>87,600</td>
+        </tr>
+        <tr>
+            <td colspan="11">송내</td>
+            <td>136,000</td>
+            <td>98,400</td>
+        </tr>
+        <tr>
+            <td colspan="11">이천</td>
+            <td>100,000</td>
+            <td>73,800</td>
+        </tr>
+        <tr>
+            <td colspan="11">여주</td>
+            <td>93,000</td>
+            <td>69,000</td>
+        </tr>
+    </table> <br />
+
+
+    <p>통학버스 교통 이용 안내문</p>
+    1. 통학 등록은 매월 말일 경 본 대학교 학생처에서 신청하시기 바랍니다. (운행 차량 내 방송 참고)<br />
+    2. 매일 시간을 엄수하여 운행하므로 통학 학생은 지정된 출발 장소에서 항상 10분 전까지 대기 후 승차하시기 바랍니다.<br />
+    3. 세명대학교 하교 출발 시간(잠실 기준) : 44명 정원 승차 후 수시로 출발하며, 마지막 차량은 월~목 20:00, 금 18:40 엄수 출발합니다.<br />
+    4. 승차 시 통학증을 운행차량 승무원 또는 담당자에게 제시하여 주시기 바랍니다.<br />
+    5. 분실 또는 이용기간 중 이용중단의 사유로 재발급 또는 환불이 불가하오니 신중히 신청하시기 바랍니다.<br />
+    6. 통학 중 불편 사항이 있을시 TEL : (02) 465-0700 [두레고속관광] 으로 연락주시면 즉시 시정하겠습니다.<br />
+    7. 최상의 안전운행을 위하여 통학버스 내에서의 흡연, 음주, 고성방가 등의 행위는 엄격히 통제합니다.<br />
+    8. 통학버스 내에서 핸드폰 사용 시 조용한 목소리로 말하며, 타인에게 방해되는 일이 없도록 각별히 유념하시기 바랍니다.<br />
+    <p>세 명 대 학 교 학 생 처 장</p> <br />
+
+    <center>
+        <button onclick="showAlert()">통학증 신청</button>
+    </center>
+
+    <script>
+        function showAlert() {
+            alert("통학증 신청 완료");
+        }
+
+        function check3days() {
+            var values = document.getElementsByName("day"); // 체크박스객체를 담는다
+            var days = '';             //체크된 체크박스의 모든 value 값을 담는다
+
+            for (var i = 0; i < 3; i++) {
+                if (values[i].checked == true) {  //체크가 되어있는 값 구분
+                    days += values[i].value;
+                }
+            }
+            alert(days);
+        }
+    </script>
+</form>
+</body>
+</html>

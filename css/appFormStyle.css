@@ -1,0 +1,30 @@
+﻿p {
+    text-align: center;
+}
+
+#title {
+    font: 30px solid;
+}
+
+.blueTop {
+    border-collapse: collapse;
+    border-top: 3px solid #168;
+}
+
+    .blueTop th {
+        color: #168;
+        background: #f0f6f9;
+    }
+
+    .blueTop th, .blueTop td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+        .blueTop th:first-child, .blueTop td:first-child {
+            border-left: 0;
+        }
+
+        .blueTop th:last-child, .blueTop td:last-child {
+            border-right: 0;
+        }
